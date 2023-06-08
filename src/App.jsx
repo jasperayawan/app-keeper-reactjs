@@ -29,13 +29,14 @@ function App() {
     <div className='bg-zinc-200 overflow-hidden'>
       <div className='min-h-screen'>
         <Header/>
+        <div className='md:px-4'>
         <div className='px-4 md:p-0'>
           <CreateArea
             onAdd={addNote}
           />
         </div>
 
-        <div className='flex gap-2 flex-col md:flex-row max-w-5xl mx-auto px-4 md:p-0'>
+        <div className='grid gap-2 md:grid-cols-3 lg:grid-cols-4 md:flex-row max-w-5xl mx-auto h-full px-4 md:p-0'>
           {notes.map((noteItem, index) => {
             return <Note 
               key={index}
@@ -45,6 +46,7 @@ function App() {
               onDelete={deleteNote}
               />
           })}
+        </div>
         </div>
 
       </div>
